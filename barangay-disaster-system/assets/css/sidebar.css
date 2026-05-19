@@ -1,0 +1,117 @@
+/* ================================================================
+   Sidebar Stylesheet
+   ================================================================ */
+
+.sidebar {
+  width: var(--bdrs-sidebar-w);
+  min-height: 100vh;
+  background: var(--bdrs-sidebar-bg);
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 1030;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: width .25s ease;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,.15) transparent;
+}
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,.15); border-radius: 2px; }
+
+/* ── Collapsed state ──────────────────────────────────────────── */
+.sidebar.sidebar-collapsed { width: var(--bdrs-sidebar-coll); }
+.sidebar.sidebar-collapsed .sidebar-brand-text,
+.sidebar.sidebar-collapsed .sidebar-link span,
+.sidebar.sidebar-collapsed .badge-sidebar,
+.sidebar.sidebar-collapsed .sidebar-section-label,
+.sidebar.sidebar-collapsed .sidebar-hotlines { display: none; }
+.sidebar.sidebar-collapsed .sidebar-link { justify-content: center; padding: .65rem .5rem; }
+.sidebar.sidebar-collapsed .sidebar-brand { justify-content: center; }
+.sidebar.sidebar-collapsed .sidebar-divider { margin: .25rem .5rem; }
+
+/* ── Brand ────────────────────────────────────────────────────── */
+.sidebar-brand {
+  color: #fff !important;
+  padding: .9rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  min-height: var(--bdrs-topbar-h);
+}
+
+.sidebar-brand-icon {
+  width: 34px; height: 34px;
+  background: var(--bdrs-red);
+  border-radius: .4rem;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* ── Nav links ────────────────────────────────────────────────── */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  color: var(--bdrs-sidebar-text) !important;
+  border-radius: .4rem;
+  padding: .55rem .75rem;
+  font-size: .875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background .15s, color .15s;
+  text-decoration: none;
+}
+.sidebar-link i { font-size: 1rem; flex-shrink: 0; width: 20px; text-align: center; }
+.sidebar-link:hover { background: var(--bdrs-sidebar-hover); color: #fff !important; }
+.sidebar-link.active {
+  background: var(--bdrs-sidebar-active-bg) !important;
+  color: #fff !important;
+}
+
+/* ── Divider & section label ──────────────────────────────────── */
+.sidebar-divider {
+  border-color: rgba(255,255,255,.08);
+  margin: .4rem .75rem;
+}
+.sidebar-section-label {
+  padding: .2rem .75rem;
+  font-size: .63rem;
+  letter-spacing: .1em;
+  font-weight: 700;
+  color: rgba(255,255,255,.35);
+  text-transform: uppercase;
+}
+
+/* ── Badges ───────────────────────────────────────────────────── */
+.badge-sidebar {
+  font-size: .65rem;
+  padding: .2em .5em;
+  border-radius: .8rem;
+  font-weight: 600;
+  background: rgba(255,255,255,.2);
+  color: #fff;
+}
+.badge-sidebar.badge-sos     { background: var(--bdrs-red); }
+.badge-sidebar.badge-warning { background: var(--bdrs-orange); }
+
+/* ── Hotlines panel ───────────────────────────────────────────── */
+.sidebar-hotlines {
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: rgba(0,0,0,.2);
+  margin-top: auto;
+}
+.hotline-label {
+  font-size: .58rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  font-weight: 700;
+  margin-bottom: .3rem;
+}
+.hotline-number {
+  font-size: .75rem;
+  color: rgba(255,255,255,.7);
+  line-height: 1.7;
+}
+.hotline-number i { margin-right: .3rem; }
