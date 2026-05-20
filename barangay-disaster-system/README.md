@@ -60,8 +60,8 @@ uploads/missing/
 ### 7. Access the system
 - Open your browser: `http://localhost/barangay-disaster-system/`
 - **Default Admin Login:**
-  - Username: `admin`
-  - Password: *(set via phpMyAdmin — see step 8)*
+  - Username: admin
+  - Password: password
 
 ### 8. Set the admin password
 Run this in phpMyAdmin SQL tab (replace `YourSecurePassword` with a strong password):
